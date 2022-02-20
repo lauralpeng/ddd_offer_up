@@ -14,5 +14,4 @@ class UserResource < ApplicationResource
              foreign_key: :seller_user_id
 
   # Indirect associations
-
 end

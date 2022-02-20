@@ -20,5 +20,4 @@ class ItemResource < ApplicationResource
   has_many   :messages
 
   # Indirect associations
-
 end

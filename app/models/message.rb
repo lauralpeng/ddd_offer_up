@@ -2,7 +2,7 @@ class Message < ApplicationRecord
   # Direct associations
 
   belongs_to :sender_user,
-             :class_name => "User"
+             class_name: "User"
 
   belongs_to :item
 
@@ -15,5 +15,4 @@ class Message < ApplicationRecord
   def to_s
     sender_user.to_s
   end
-
 end

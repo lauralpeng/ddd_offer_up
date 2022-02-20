@@ -1,15 +1,14 @@
 class User < ApplicationRecord
-  
   include JwtToken
-# Direct associations
+  # Direct associations
 
   has_many   :messages,
-             :foreign_key => "sender_user_id",
-             :dependent => :destroy
+             foreign_key: "sender_user_id",
+             dependent: :destroy
 
   has_many   :items,
-             :foreign_key => "seller_user_id",
-             :dependent => :destroy
+             foreign_key: "seller_user_id",
+             dependent: :destroy
 
   # Indirect associations
 

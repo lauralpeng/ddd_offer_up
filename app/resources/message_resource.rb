@@ -14,5 +14,4 @@ class MessageResource < ApplicationResource
   belongs_to :item
 
   # Indirect associations
-
 end

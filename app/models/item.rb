@@ -1,10 +1,10 @@
-require 'open-uri'
+require "open-uri"
 class Item < ApplicationRecord
   before_validation :geocode_location
 
   def geocode_location
-    if self.location.present?
-      url = "https://maps.googleapis.com/maps/api/geocode/json?key=#{ENV['GMAP_API_KEY']}&address=#{URI.encode(self.location)}"
+    if location.present?
+      url = "https://maps.googleapis.com/maps/api/geocode/json?key=#{ENV['GMAP_API_KEY']}&address=#{URI.encode(location)}"
 
       raw_data = open(url).read
 
@@ -24,14 +24,14 @@ class Item < ApplicationRecord
   # Direct associations
 
   belongs_to :category,
-             :counter_cache => true
+             counter_cache: true
 
   belongs_to :seller_user,
-             :class_name => "User",
-             :counter_cache => true
+             class_name: "User",
+             counter_cache: true
 
   has_many   :messages,
-             :dependent => :destroy
+             dependent: :destroy
 
   # Indirect associations
 
@@ -42,5 +42,4 @@ class Item < ApplicationRecord
   def to_s
     item_name
   end
-
 end
