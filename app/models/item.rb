@@ -1,6 +1,10 @@
 class Item < ApplicationRecord
   # Direct associations
 
+  belongs_to :seller_user,
+             :class_name => "User",
+             :counter_cache => true
+
   has_many   :messages,
              :dependent => :destroy
 
