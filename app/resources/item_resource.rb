@@ -12,6 +12,8 @@ class ItemResource < ApplicationResource
 
   # Direct associations
 
+  belongs_to :category
+
   belongs_to :seller_user,
              resource: UserResource
 
