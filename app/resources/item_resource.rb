@@ -12,6 +12,9 @@ class ItemResource < ApplicationResource
 
   # Direct associations
 
+  belongs_to :seller_user,
+             resource: UserResource
+
   has_many   :messages
 
   # Indirect associations
