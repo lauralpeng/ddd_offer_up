@@ -7,7 +7,11 @@
     <dl class="mb-1">
       <dt>Sender user</dt>
       <!-- Display sender_user_id start -->
-      <dd><%= message.sender_user_id %></dd>
+      <dd>
+        <% if @message.sender_user.present? %>
+          <%= link_to message.sender_user, message.sender_user %>
+        <% end %>
+      </dd>
       <!-- Display sender_user_id end -->
 
       <dt>Message</dt>
@@ -17,7 +21,11 @@
 
       <dt>Item</dt>
       <!-- Display item_id start -->
-      <dd><%= message.item_id %></dd>
+      <dd>
+        <% if @message.item.present? %>
+          <%= link_to message.item, message.item %>
+        <% end %>
+      </dd>
       <!-- Display item_id end -->
 
     </dl>

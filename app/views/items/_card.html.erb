@@ -12,12 +12,20 @@
 
       <dt>Category</dt>
       <!-- Display category_id start -->
-      <dd><%= item.category_id %></dd>
+      <dd>
+        <% if @item.category.present? %>
+          <%= link_to item.category, item.category %>
+        <% end %>
+      </dd>
       <!-- Display category_id end -->
 
       <dt>Seller user</dt>
       <!-- Display seller_user_id start -->
-      <dd><%= item.seller_user_id %></dd>
+      <dd>
+        <% if @item.seller_user.present? %>
+          <%= link_to item.seller_user, item.seller_user %>
+        <% end %>
+      </dd>
       <!-- Display seller_user_id end -->
 
       <dt>Price</dt>
