@@ -1,5 +1,7 @@
 ActiveAdmin.register Message do
 
+ permit_params :sender_user_id, :message, :item_id
+
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
